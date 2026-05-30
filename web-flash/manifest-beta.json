@@ -1,0 +1,16 @@
+{
+  "name": "CaravanControl (Beta)",
+  "version": "v1.0.15-beta.3",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        {
+          "path": "https://github.com/VolkmSte/Shelly_CaravanControl_Releases/releases/download/v1.0.15-beta.3/firmware.bin",
+          "offset": 65536
+        }
+      ]
+    }
+  ]
+}
