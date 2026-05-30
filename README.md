@@ -6,12 +6,12 @@ Dieses Repository enthaelt ausschliesslich signierte/verifizierbare Release-Arte
 
 CaravanControl ist eine lokale Steuer- und Integrationsplattform fuer Caravan-/Boots-Setups auf ESP32-S3. Das System laeuft internetunabhaengig als lokale Appliance und verbindet Netzwerkdienste, Victron-Integration, Shelly-Geraete und Update-Workflows in einer gemeinsamen Laufzeit.
 
-Wir spezialisieren uns auf Smarthome-Komponenten von Shelly. Weitere Informationen zum Hersteller: [Shelly Homepage](https://www.shelly.com).
+Der Projektfokus liegt auf Smarthome-Komponenten von Shelly. Weitere Informationen zum Hersteller: [Shelly Homepage](https://www.shelly.com).
 
-Zusaetzlich integrieren wir Victron-Komponenten wie SmartShunt und Solarregler. Weitere Informationen zum Hersteller: [Victron Energy Homepage](https://www.victronenergy.com).
-Fuer die VE.Direct-Anbindung ueber ESP32-OTG-Host verwenden wir diesen isolierten 4-Port-USB-Adapter: [Duppa Isolated 4 Port USB](https://www.duppa.net/product/isolated-4-port-usb/).
+Zusaetzlich integriert das Projekt Victron-Komponenten wie SmartShunt und Solarregler. Weitere Informationen zum Hersteller: [Victron Energy Homepage](https://www.victronenergy.com).
+Fuer die VE.Direct-Anbindung ueber ESP32-OTG-Host wird ein isolierter 4-Port-USB-Adapter eingesetzt: [Duppa Isolated 4 Port USB](https://www.duppa.net/product/isolated-4-port-usb/).
 
-Unsere Zielhardware ist dieses Board: [Waveshare ESP32-S3 e-Paper 1.54 Herstellerseite](https://www.waveshare.com/esp32-s3-epaper-1.54.htm?srsltid=AfmBOoqwjPkPx7ijh-JVnJDGCPiQHWezCPckLVLmy2CfNyPFLn5faSFJ).
+Empfohlene Zielhardware: [Waveshare ESP32-S3 e-Paper 1.54 Herstellerseite](https://www.waveshare.com/esp32-s3-epaper-1.54.htm?srsltid=AfmBOoqwjPkPx7ijh-JVnJDGCPiQHWezCPckLVLmy2CfNyPFLn5faSFJ).
 
 Funktionsumfang (aktueller Stand):
 
