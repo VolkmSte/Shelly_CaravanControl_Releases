@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CaravanControl Web Flasher</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 820px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
+    h1 { margin-bottom: 0.5rem; }
+    .card { border: 1px solid #ddd; border-radius: 10px; padding: 1rem; margin-top: 1rem; }
+    code { background: #f5f5f5; padding: 0.15rem 0.35rem; border-radius: 4px; }
+    .warn { background: #fff3cd; border: 1px solid #ffe69c; }
+  </style>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10.1.0/dist/web/install-button.js?module"></script>
+</head>
+<body>
+  <h1>CaravanControl ESP32-S3 Web Flasher</h1>
+  <p>USB-Flash direkt im Browser (Chrome/Edge Desktop mit Web Serial).</p>
+
+  <div class="card warn">
+    <strong>Hinweis:</strong> Dieser Installer schreibt <code>firmware.bin</code> auf Offset <code>0x10000</code>.
+    Das ist der empfohlene Update-Pfad fuer bereits initialisierte Geraete.
+  </div>
+
+  <div class="card">
+    <h2>Beta Installer</h2>
+    <esp-web-install-button manifest="./manifest-beta.json"></esp-web-install-button>
+    <p>Aktueller Tag im Manifest: <code>v1.0.15-beta.3</code></p>
+  </div>
+
+  <div class="card">
+    <h2>Schritte</h2>
+    <ol>
+      <li>ESP per USB verbinden.</li>
+      <li>Install-Button klicken.</li>
+      <li>Seriellen Port waehlen und bestaetigen.</li>
+      <li>Nach dem Flash neu starten.</li>
+    </ol>
+  </div>
+</body>
+</html>
