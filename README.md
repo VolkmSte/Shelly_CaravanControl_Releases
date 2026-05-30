@@ -2,6 +2,34 @@
 
 Dieses Repository enthaelt ausschliesslich signierte/verifizierbare Release-Artefakte fuer CaravanControl.
 
+## Was CaravanControl macht
+
+CaravanControl ist eine lokale Steuer- und Integrationsplattform fuer Caravan-/Boots-Setups auf ESP32-S3. Das System verbindet Victron-Daten, Shelly-Geraete und lokale Automationen in einer gemeinsamen Laufzeit.
+
+Wichtige Funktionen:
+
+- Lokales Dashboard fuer Status, Steuerung und Diagnose
+- OTA-Updates aus dem Release-Repository
+- Web-Flasher (GitHub Pages) fuer browserbasiertes Firmware-Update
+- Shelly-Discovery und Geraeteinventar im lokalen Netz
+- Shelly BLU Button-Ereignisse fuer Taster-Aktionen
+- Integrationen fuer Last-/Shore-Power-Automation und Telemetrie
+
+Unterstuetzte Shelly-Produkte (aktueller Stand):
+
+- Shelly Plus 1
+- Shelly Plus 1PM
+- Shelly Plus i4
+- Shelly Plus RGBW PM
+- Shelly Plus Plug
+- Shelly Plus Plug S
+- Shelly Plus 2PM
+- Shelly BLU Button1
+
+Hinweis:
+
+- Shelly RGBW2 ist derzeit nicht freigegeben.
+
 - Keine Quellcode-Entwicklung in diesem Repository
 - Keine Pull Requests fuer Code-Aenderungen in diesem Repository
 - Quellcode und Entwicklung: siehe Source Repository (unten)
