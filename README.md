@@ -6,6 +6,8 @@ Dieses Repository enthaelt ausschliesslich signierte/verifizierbare Release-Arte
 
 CaravanControl ist eine lokale Steuer- und Integrationsplattform fuer Caravan-/Boots-Setups auf ESP32-S3. Das System laeuft internetunabhaengig als lokale Appliance und verbindet Netzwerkdienste, Victron-Integration, Shelly-Geraete und Update-Workflows in einer gemeinsamen Laufzeit.
 
+Unsere Zielhardware ist dieses Board: [ESP32-S3 DevKitC-1 N16R8 bei Amazon](https://www.amazon.de/dp/B0FQJNW2Q5?ref=ppx_yo2ov_dt_b_fed_asin_title).
+
 Funktionsumfang (aktueller Stand):
 
 - Lokale Runtime-Services: HTTP-Server, mDNS (`caravan.local`), MQTT-Broker, RPC-Proxy
@@ -41,6 +43,7 @@ Hinweis:
 
 Diese Releases sind fuer folgende Zielplattform gebaut und getestet:
 
+- Zielboard-Produkt: [ESP32-S3 DevKitC-1 N16R8 bei Amazon](https://www.amazon.de/dp/B0FQJNW2Q5?ref=ppx_yo2ov_dt_b_fed_asin_title)
 - Hersteller: Espressif Systems
 - Hersteller-Typenbezeichnung: ESP32-S3-DevKitC-1
 - Verwendete Variante im Projekt: ESP32-S3-DevKitC-1-N16R8 (16 MB Flash, 8 MB PSRAM)
