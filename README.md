@@ -43,7 +43,7 @@ Hinweis:
 
 Diese Releases sind fuer folgende Zielplattform gebaut und getestet:
 
-- Zielboard-Produkt: [Waveshare ESP32-S3 e-Paper 1.54 Herstellerseite](https://www.waveshare.com/esp32-s3-epaper-1.54.htm?srsltid=AfmBOoqwjPkPx7ijh-JVnJDGCPiQHWezCPckLVLmy2CfNyPFLn5faSFJ)
+- Zielboard-Referenz: [Waveshare ESP32-S3 e-Paper 1.54 Herstellerseite](https://www.waveshare.com/esp32-s3-epaper-1.54.htm?srsltid=AfmBOoqwjPkPx7ijh-JVnJDGCPiQHWezCPckLVLmy2CfNyPFLn5faSFJ)
 - Hersteller: Espressif Systems
 - Hersteller-Typenbezeichnung: ESP32-S3-DevKitC-1
 - Verwendete Variante im Projekt: ESP32-S3-DevKitC-1-N16R8 (16 MB Flash, 8 MB PSRAM)
