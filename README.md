@@ -9,6 +9,7 @@ CaravanControl ist eine lokale Steuer- und Integrationsplattform fuer Caravan-/B
 Wir spezialisieren uns auf Smarthome-Komponenten von Shelly. Weitere Informationen zum Hersteller: [Shelly Homepage](https://www.shelly.com).
 
 Zusaetzlich integrieren wir Victron-Komponenten wie SmartShunt und Solarregler. Weitere Informationen zum Hersteller: [Victron Energy Homepage](https://www.victronenergy.com).
+Fuer die VE.Direct-Anbindung ueber ESP32-OTG-Host verwenden wir diesen isolierten 4-Port-USB-Adapter: [Duppa Isolated 4 Port USB](https://www.duppa.net/product/isolated-4-port-usb/).
 
 Unsere Zielhardware ist dieses Board: [Waveshare ESP32-S3 e-Paper 1.54 Herstellerseite](https://www.waveshare.com/esp32-s3-epaper-1.54.htm?srsltid=AfmBOoqwjPkPx7ijh-JVnJDGCPiQHWezCPckLVLmy2CfNyPFLn5faSFJ).
 
@@ -20,7 +21,7 @@ Funktionsumfang (aktueller Stand):
 - Device-Management: Discovery, Klassifizierung, Inventar und Firmware-/Update-Status
 - OTA-Updatepfad aus diesem Release-Repository inkl. API-gestuetzter Update-Pruefung
 - Browserbasierter Web-Flasher (GitHub Pages) fuer direktes Firmware-Update
-- Victron/VE.Direct Integration: UART Single-Device und USB-OTG Multiport (FT4232H, bis 4 Ports) mit Live-Telemetrie
+- Victron/VE.Direct Integration: UART Single-Device und USB-OTG Multiport (FT4232H, bis 4 Ports) mit Live-Telemetrie; im OTG-Pfad mit isoliertem 4-Port-USB-Adapter (Duppa)
 - Lokale Automations-/Telemetriebausteine fuer Energie- und Lastszenarien (inkl. Shore-Power-Pfad)
 
 Unterstuetzte Shelly-Produkte (aktueller Stand):
