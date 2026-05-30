@@ -68,6 +68,48 @@ Hinweise:
 - Auswahl von Kanal (`main`/`beta`) und konkreter Version direkt auf der Seite
 - Schreibt aktuell `firmware.bin` auf Offset `0x10000` (Update-Pfad)
 
+## Installationsanleitung
+
+### Variante A: Browser Web Flasher (empfohlen fuer Updates)
+
+Voraussetzungen:
+
+- ESP32-S3 Zielgeraet per USB verbunden
+- Chrome oder Edge auf Desktop
+- Zugriff auf die Web-Flasher-Seite
+
+Schritte:
+
+1. Web-Flasher oeffnen.
+2. Kanal waehlen: `main` (stable) oder `beta` (pre-release).
+3. Gewuenschte Version auswaehlen.
+4. Auf Install klicken und den seriellen Port bestaetigen.
+5. Nach erfolgreichem Flash das Geraet neu starten.
+
+Hinweis:
+
+- Diese Methode schreibt `firmware.bin` auf `0x10000` und ist als Update-Pfad gedacht.
+
+### Variante B: OTA-Update aus dem Geraet
+
+Voraussetzungen:
+
+- Geraet laeuft bereits mit kompatibler CaravanControl-Firmware
+- Netzwerkzugriff auf das Geraet
+
+Schritte:
+
+1. Im Geraet die OTA-Pruefung gegen dieses Release-Repo ausfuehren.
+2. Verfuegbares Release bestaetigen.
+3. Download und Installation starten.
+4. Neustart nach Abschluss durchfuehren.
+
+Beispiel fuer den OTA-Check:
+
+```bash
+curl -s "http://caravan.local/api/base/ota/check?repo=VolkmSte/Shelly_CaravanControl_Releases" | python3 -m json.tool
+```
+
 ## Rechtliche Hinweise und Haftungsausschluss
 
 Wichtig:
