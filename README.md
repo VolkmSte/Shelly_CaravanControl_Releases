@@ -58,7 +58,7 @@ Im Public-Repo steht ein Browser-Installer fuer ESP32-S3 bereit:
 
 - [Web Flasher](https://github.com/VolkmSte/Shelly_CaravanControl_Releases/tree/main/web-flash)
 
-Direktlink (nach Aktivierung von GitHub Pages):
+Direktlink (GitHub Pages ist aktiviert):
 
 - [GitHub Pages Web Flasher](https://volkmste.github.io/Shelly_CaravanControl_Releases/web-flash/)
 
@@ -144,9 +144,9 @@ Quellcode, Build-Skripte, Dokumentation und Issue-Tracking:
 Lizenz und Drittanbieter-Lizenzen:
 
 - [LICENSE](https://github.com/VolkmSte/Shelly_CaravanControl/blob/main/LICENSE)
-- [THIRD_PARTY_LICENSES.md](https://github.com/VolkmSte/Shelly_CaravanControl/blob/main/THIRD_PARTY_LICENSES.md)
+- [THIRD_PARTY_LICENSES.md](./THIRD_PARTY_LICENSES.md)
 
 Wichtig:
 
-- Dieses Release-Repository verteilt Binaerdateien.
-- Urheberrecht, Lizenzbedingungen und Quellenachweise gelten gemaess den obigen Verweisen.
+- Dieses Release-Repo verteilt Binaerdateien (ohne Quellcode).
+- Dieses Release-Repo verteilt Binaerdateien. Quellcode, Lizenzen und Drittanbieter-Lizenzen: [Source Repository](https://github.com/VolkmSte/Shelly_CaravanControl), [LICENSE](https://github.com/VolkmSte/Shelly_CaravanControl/blob/main/LICENSE), [THIRD_PARTY_LICENSES](./THIRD_PARTY_LICENSES.md).
