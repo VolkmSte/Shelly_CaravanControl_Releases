@@ -56,10 +56,6 @@ curl -s "http://caravan.local/api/base/ota/check?repo=VolkmSte/Shelly_CaravanCon
 
 ## Web Flasher (Browser)
 
-Im Public-Repo steht ein Browser-Installer fuer ESP32-S3 bereit:
-
-- [Web Flasher](https://github.com/VolkmSte/Shelly_CaravanControl_Releases/tree/main/web-flash)
-
 Direktlink (GitHub Pages ist aktiviert):
 
 - [GitHub Pages Web Flasher](https://volkmste.github.io/Shelly_CaravanControl_Releases/web-flash/)
