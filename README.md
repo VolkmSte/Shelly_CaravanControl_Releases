@@ -4,16 +4,18 @@ Dieses Repository enthaelt ausschliesslich signierte/verifizierbare Release-Arte
 
 ## Was CaravanControl macht
 
-CaravanControl ist eine lokale Steuer- und Integrationsplattform fuer Caravan-/Boots-Setups auf ESP32-S3. Das System verbindet Victron-Daten, Shelly-Geraete und lokale Automationen in einer gemeinsamen Laufzeit.
+CaravanControl ist eine lokale Steuer- und Integrationsplattform fuer Caravan-/Boots-Setups auf ESP32-S3. Das System laeuft internetunabhaengig als lokale Appliance und verbindet Netzwerkdienste, Victron-Integration, Shelly-Geraete und Update-Workflows in einer gemeinsamen Laufzeit.
 
-Wichtige Funktionen:
+Funktionsumfang (aktueller Stand):
 
-- Lokales Dashboard fuer Status, Steuerung und Diagnose
-- OTA-Updates aus dem Release-Repository
-- Web-Flasher (GitHub Pages) fuer browserbasiertes Firmware-Update
-- Shelly-Discovery und Geraeteinventar im lokalen Netz
-- Shelly BLU Button-Ereignisse fuer Taster-Aktionen
-- Integrationen fuer Last-/Shore-Power-Automation und Telemetrie
+- Lokale Runtime-Services: HTTP-Server, mDNS (`caravan.local`), MQTT-Broker, RPC-Proxy
+- Netzwerkmodi: `client_only` oder `extender` (AP+STA mit NAT, DHCP/NTP-Unterstuetzung)
+- Setup-/Betriebsoberflaechen: vollstaendige Setup-Web-App unter `/setup`, reduzierte Recovery-UI unter `/emergency`, Dashboard fuer Betrieb und Diagnose
+- Device-Management: Discovery, Klassifizierung, Inventar und Firmware-/Update-Status
+- OTA-Updatepfad aus diesem Release-Repository inkl. API-gestuetzter Update-Pruefung
+- Browserbasierter Web-Flasher (GitHub Pages) fuer direktes Firmware-Update
+- Victron/VE.Direct Integration: UART Single-Device und USB-OTG Multiport (FT4232H, bis 4 Ports) mit Live-Telemetrie
+- Lokale Automations-/Telemetriebausteine fuer Energie- und Lastszenarien (inkl. Shore-Power-Pfad)
 
 Unterstuetzte Shelly-Produkte (aktueller Stand):
 
@@ -28,7 +30,8 @@ Unterstuetzte Shelly-Produkte (aktueller Stand):
 
 Hinweis:
 
-- Shelly RGBW2 ist derzeit nicht freigegeben.
+- Produktiv freigegeben fuer den beschriebenen Deploy-Pfad sind Shelly Gen2-Modelle plus Shelly BLU Button1.
+- Shelly RGBW2 (Gen1) ist derzeit nicht fuer Auto-Deploy freigegeben.
 
 - Keine Quellcode-Entwicklung in diesem Repository
 - Keine Pull Requests fuer Code-Aenderungen in diesem Repository
