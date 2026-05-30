@@ -10,7 +10,9 @@ Dieses Repository enthaelt ausschliesslich signierte/verifizierbare Release-Arte
 
 Diese Releases sind fuer folgende Zielplattform gebaut und getestet:
 
-- ESP32-S3 DevKitC-1 (16 MB Flash, 8 MB PSRAM)
+- Hersteller: Espressif Systems
+- Hersteller-Typenbezeichnung: ESP32-S3-DevKitC-1
+- Verwendete Variante im Projekt: ESP32-S3-DevKitC-1-N16R8 (16 MB Flash, 8 MB PSRAM)
 - Board-Profil: esp32-s3-devkitc-1-n16
 - PlatformIO Environment: esp32-s3-nat-8mb
 
