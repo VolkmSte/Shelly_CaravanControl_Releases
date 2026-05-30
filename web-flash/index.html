@@ -5,37 +5,203 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CaravanControl Web Flasher</title>
   <style>
-    body { font-family: Arial, sans-serif; max-width: 820px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
-    h1 { margin-bottom: 0.5rem; }
+    body { font-family: Arial, sans-serif; max-width: 920px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
+    h1 { margin-bottom: 0.4rem; }
+    .muted { color: #555; }
     .card { border: 1px solid #ddd; border-radius: 10px; padding: 1rem; margin-top: 1rem; }
+    .warn { background: #fff3cd; border-color: #ffe69c; }
+    .row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    select, button { font-size: 1rem; padding: 0.45rem 0.6rem; }
     code { background: #f5f5f5; padding: 0.15rem 0.35rem; border-radius: 4px; }
-    .warn { background: #fff3cd; border: 1px solid #ffe69c; }
+    .status { margin-top: 0.75rem; }
+    a { color: #0366d6; }
   </style>
   <script type="module" src="https://unpkg.com/esp-web-tools@10.1.0/dist/web/install-button.js?module"></script>
 </head>
 <body>
   <h1>CaravanControl ESP32-S3 Web Flasher</h1>
-  <p>USB-Flash direkt im Browser (Chrome/Edge Desktop mit Web Serial).</p>
+  <p class="muted">Browser-Flash fuer ESP32-S3 (Chrome/Edge Desktop mit Web Serial).</p>
 
   <div class="card warn">
-    <strong>Hinweis:</strong> Dieser Installer schreibt <code>firmware.bin</code> auf Offset <code>0x10000</code>.
-    Das ist der empfohlene Update-Pfad fuer bereits initialisierte Geraete.
+    <strong>Hinweis:</strong> Dieser Installer schreibt <code>firmware.bin</code> auf Offset <code>0x10000</code>
+    und ist damit als Update-Pfad fuer bereits initialisierte Geraete gedacht.
   </div>
 
   <div class="card">
-    <h2>Beta Installer</h2>
-    <esp-web-install-button manifest="./manifest-beta.json"></esp-web-install-button>
-    <p>Aktueller Tag im Manifest: <code>v1.0.15-beta.3</code></p>
+    <h2>Release auswaehlen</h2>
+
+    <div class="row">
+      <label>
+        Kanal
+        <select id="channelSelect">
+          <option value="main">main (stable)</option>
+          <option value="beta">beta (pre-release)</option>
+        </select>
+      </label>
+
+      <label>
+        Version
+        <select id="versionSelect" disabled>
+          <option>Lade Releases...</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="row">
+      <esp-web-install-button id="installButton"></esp-web-install-button>
+      <a id="releaseLink" href="#" target="_blank" rel="noopener">Release auf GitHub oeffnen</a>
+    </div>
+
+    <div class="status" id="statusText">Initialisiere...</div>
   </div>
 
   <div class="card">
     <h2>Schritte</h2>
     <ol>
-      <li>ESP per USB verbinden.</li>
-      <li>Install-Button klicken.</li>
-      <li>Seriellen Port waehlen und bestaetigen.</li>
-      <li>Nach dem Flash neu starten.</li>
+      <li>Kanal waehlen (main oder beta).</li>
+      <li>Version waehlen.</li>
+      <li>Install klicken, seriellen Port waehlen und bestaetigen.</li>
+      <li>Geraet nach dem Flash neu starten.</li>
     </ol>
   </div>
+
+  <script>
+    const REPO = 'VolkmSte/Shelly_CaravanControl_Releases';
+    const channelSelect = document.getElementById('channelSelect');
+    const versionSelect = document.getElementById('versionSelect');
+    const statusText = document.getElementById('statusText');
+    const installButton = document.getElementById('installButton');
+    const releaseLink = document.getElementById('releaseLink');
+
+    let releases = [];
+    let currentManifestUrl = null;
+
+    function setStatus(msg) {
+      statusText.textContent = msg;
+    }
+
+    function filterReleases(channel) {
+      if (channel === 'beta') {
+        return releases.filter(r => r.prerelease === true);
+      }
+      return releases.filter(r => r.prerelease !== true);
+    }
+
+    function findFirmwareAsset(release) {
+      const assets = Array.isArray(release.assets) ? release.assets : [];
+      return assets.find(a => String(a.name || '').toLowerCase() === 'firmware.bin');
+    }
+
+    function buildManifestForRelease(release) {
+      const asset = findFirmwareAsset(release);
+      if (!asset) return null;
+
+      return {
+        name: `CaravanControl (${channelSelect.value})`,
+        version: release.tag_name,
+        new_install_prompt_erase: false,
+        builds: [
+          {
+            chipFamily: 'ESP32-S3',
+            parts: [
+              {
+                path: asset.browser_download_url,
+                offset: 65536
+              }
+            ]
+          }
+        ]
+      };
+    }
+
+    function applySelectedRelease() {
+      const idx = Number(versionSelect.value);
+      const list = filterReleases(channelSelect.value);
+      const rel = list[idx];
+      if (!rel) {
+        installButton.removeAttribute('manifest');
+        releaseLink.href = '#';
+        setStatus('Keine gueltige Version ausgewaehlt.');
+        return;
+      }
+
+      const manifest = buildManifestForRelease(rel);
+      if (!manifest) {
+        installButton.removeAttribute('manifest');
+        releaseLink.href = rel.html_url || '#';
+        setStatus('Ausgewaehltes Release enthaelt kein firmware.bin Asset.');
+        return;
+      }
+
+      if (currentManifestUrl) {
+        URL.revokeObjectURL(currentManifestUrl);
+        currentManifestUrl = null;
+      }
+
+      const blob = new Blob([JSON.stringify(manifest, null, 2)], { type: 'application/json' });
+      currentManifestUrl = URL.createObjectURL(blob);
+      installButton.setAttribute('manifest', currentManifestUrl);
+      releaseLink.href = rel.html_url || '#';
+      setStatus(`Bereit: ${rel.tag_name} (${channelSelect.value})`);
+    }
+
+    function updateVersionOptions() {
+      const list = filterReleases(channelSelect.value);
+      versionSelect.innerHTML = '';
+
+      if (list.length === 0) {
+        versionSelect.disabled = true;
+        const opt = document.createElement('option');
+        opt.textContent = 'Keine Releases gefunden';
+        versionSelect.appendChild(opt);
+        installButton.removeAttribute('manifest');
+        releaseLink.href = '#';
+        setStatus(`Keine Releases fuer Kanal '${channelSelect.value}' gefunden.`);
+        return;
+      }
+
+      list.forEach((rel, idx) => {
+        const asset = findFirmwareAsset(rel);
+        const date = (rel.published_at || '').slice(0, 10) || 'unbekannt';
+        const opt = document.createElement('option');
+        opt.value = String(idx);
+        opt.textContent = `${rel.tag_name} - ${date}${asset ? '' : ' (kein firmware.bin)'}`;
+        versionSelect.appendChild(opt);
+      });
+
+      versionSelect.disabled = false;
+      versionSelect.value = '0';
+      applySelectedRelease();
+    }
+
+    async function loadReleases() {
+      setStatus('Lade Releases von GitHub...');
+      versionSelect.disabled = true;
+      versionSelect.innerHTML = '<option>Lade Releases...</option>';
+
+      try {
+        const res = await fetch(`https://api.github.com/repos/${REPO}/releases?per_page=50`);
+        if (!res.ok) {
+          throw new Error(`GitHub API HTTP ${res.status}`);
+        }
+        releases = await res.json();
+        if (!Array.isArray(releases)) {
+          throw new Error('Unerwartete GitHub API Antwort');
+        }
+        updateVersionOptions();
+      } catch (err) {
+        installButton.removeAttribute('manifest');
+        releaseLink.href = '#';
+        versionSelect.disabled = true;
+        versionSelect.innerHTML = '<option>Fehler beim Laden</option>';
+        setStatus(`Fehler: ${String(err)}`);
+      }
+    }
+
+    channelSelect.addEventListener('change', updateVersionOptions);
+    versionSelect.addEventListener('change', applySelectedRelease);
+
+    loadReleases();
+  </script>
 </body>
 </html>
