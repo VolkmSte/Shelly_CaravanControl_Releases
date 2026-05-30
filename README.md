@@ -8,6 +8,8 @@ CaravanControl ist eine lokale Steuer- und Integrationsplattform fuer Caravan-/B
 
 Wir spezialisieren uns auf Smarthome-Komponenten von Shelly. Weitere Informationen zum Hersteller: [Shelly Homepage](https://www.shelly.com).
 
+Zusaetzlich integrieren wir Victron-Komponenten wie SmartShunt und Solarregler. Weitere Informationen zum Hersteller: [Victron Energy Homepage](https://www.victronenergy.com).
+
 Unsere Zielhardware ist dieses Board: [Waveshare ESP32-S3 e-Paper 1.54 Herstellerseite](https://www.waveshare.com/esp32-s3-epaper-1.54.htm?srsltid=AfmBOoqwjPkPx7ijh-JVnJDGCPiQHWezCPckLVLmy2CfNyPFLn5faSFJ).
 
 Funktionsumfang (aktueller Stand):
