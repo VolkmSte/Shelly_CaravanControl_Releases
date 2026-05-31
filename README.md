@@ -1,30 +1,31 @@
-# CaravanControl Releases (Binary-Only)
+# CaravanControl Releases (Binary-Only) ✨
 
-Dieses Repository enthaelt ausschliesslich signierte/verifizierbare Release-Artefakte fuer CaravanControl.
+CaravanControl ist die lokale Steuer- und Integrationsplattform fuer Caravan-/Boots-Setups auf ESP32-S3.
+Dieses Repository enthaelt ausschliesslich signierte und verifizierbare Release-Artefakte.
 
-## Was CaravanControl macht
+## Projekt-Highlights
 
 CaravanControl ist eine lokale Steuer- und Integrationsplattform fuer Caravan-/Boots-Setups auf ESP32-S3. Das System laeuft internetunabhaengig als lokale Appliance und verbindet Netzwerkdienste, Victron-Integration, Shelly-Geraete und Update-Workflows in einer gemeinsamen Laufzeit.
 
-Der Projektfokus liegt auf Smarthome-Komponenten von Shelly. Weitere Informationen zum Hersteller: [Shelly Homepage](https://www.shelly.com).
+🧩 Der Projektfokus liegt auf Smarthome-Komponenten von Shelly. Weitere Informationen zum Hersteller: [Shelly Homepage](https://www.shelly.com).
 
-Zusaetzlich integriert das Projekt Victron-Komponenten wie SmartShunt und Solarregler. Weitere Informationen zum Hersteller: [Victron Energy Homepage](https://www.victronenergy.com).
-Fuer die VE.Direct-Anbindung ueber ESP32-OTG-Host wird ein isolierter 4-Port-USB-Adapter eingesetzt: [Duppa Isolated 4 Port USB](https://www.duppa.net/product/isolated-4-port-usb/).
+🔋 Zusaetzlich integriert das Projekt Victron-Komponenten wie SmartShunt und Solarregler. Weitere Informationen zum Hersteller: [Victron Energy Homepage](https://www.victronenergy.com).
+🔌 Fuer die VE.Direct-Anbindung ueber ESP32-OTG-Host wird ein isolierter 4-Port-USB-Adapter eingesetzt: [Duppa Isolated 4 Port USB](https://www.duppa.net/product/isolated-4-port-usb/).
 
-Empfohlene Zielhardware: [Waveshare ESP32-S3 e-Paper 1.54 Herstellerseite](https://www.waveshare.com/esp32-s3-epaper-1.54.htm?srsltid=AfmBOoqwjPkPx7ijh-JVnJDGCPiQHWezCPckLVLmy2CfNyPFLn5faSFJ).
+🖥️ Empfohlene Zielhardware: [Waveshare ESP32-S3 e-Paper 1.54 Herstellerseite](https://www.waveshare.com/esp32-s3-epaper-1.54.htm?srsltid=AfmBOoqwjPkPx7ijh-JVnJDGCPiQHWezCPckLVLmy2CfNyPFLn5faSFJ).
 
-Funktionsumfang (aktueller Stand):
+### Was das Projekt bietet
 
-- Lokale Runtime-Services: HTTP-Server, mDNS (`caravan.local`), MQTT-Broker, RPC-Proxy
-- Netzwerkmodi: `client_only` oder `extender` (AP+STA mit NAT, DHCP/NTP-Unterstuetzung)
-- Setup-/Betriebsoberflaechen: vollstaendige Setup-Web-App unter `/setup`, reduzierte Recovery-UI unter `/emergency`, Dashboard fuer Betrieb und Diagnose
-- Device-Management: Discovery, Klassifizierung, Inventar und Firmware-/Update-Status
-- OTA-Updatepfad aus diesem Release-Repository inkl. API-gestuetzter Update-Pruefung
-- Browserbasierter Web-Flasher (GitHub Pages) fuer direktes Firmware-Update
-- Victron/VE.Direct Integration: UART Single-Device und USB-OTG Multiport (FT4232H, bis 4 Ports) mit Live-Telemetrie; im OTG-Pfad mit isoliertem 4-Port-USB-Adapter (Duppa)
-- Lokale Automations-/Telemetriebausteine fuer Energie- und Lastszenarien (inkl. Shore-Power-Pfad)
+🔧 Lokale Runtime-Services: HTTP-Server, mDNS (`caravan.local`), MQTT-Broker, RPC-Proxy
+🌐 Netzwerkmodi: `client_only` oder `extender` (AP+STA mit NAT, DHCP/NTP-Unterstuetzung)
+📱 Setup-/Betriebsoberflaechen: vollstaendige Setup-Web-App unter `/setup`, reduzierte Recovery-UI unter `/emergency`, Dashboard fuer Betrieb und Diagnose
+📦 Device-Management: Discovery, Klassifizierung, Inventar und Firmware-/Update-Status
+⬆️ OTA-Updatepfad aus diesem Release-Repository inkl. API-gestuetzter Update-Pruefung
+⚡ Browserbasierter Web-Flasher (GitHub Pages) fuer direktes Firmware-Update
+📊 Victron/VE.Direct Integration: UART Single-Device und USB-OTG Multiport (FT4232H, bis 4 Ports) mit Live-Telemetrie; im OTG-Pfad mit isoliertem 4-Port-USB-Adapter (Duppa)
+🎛️ Lokale Automations-/Telemetriebausteine fuer Energie- und Lastszenarien (inkl. Shore-Power-Pfad)
 
-Unterstuetzte Shelly-Produkte (aktueller Stand):
+### Unterstuetzte Shelly-Produkte
 
 - Shelly Plus 1
 - Shelly Plus 1PM
