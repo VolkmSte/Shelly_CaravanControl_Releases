@@ -106,6 +106,29 @@ Hinweise:
 - Schreibt aktuell `firmware.bin` auf Offset `0x10000` (Update-Pfad)
 - Beim Flashen koennen alle Daten auf dem ESP verloren gehen; vorab Konfigurationen und relevante Daten sichern.
 
+## SD-Karte vorbereiten
+
+Wenn das Geraet eine SD-Karte nutzt, ist das Release-Archiv `caravan-sd-init-[tag].zip` der empfohlene Startpunkt.
+
+Dieses ZIP enthaelt bereits die Ordnerstruktur, die das Geraet erwartet:
+
+- `/apps/dashboard/...` fuer die Web-App auf der SD-Karte
+- `/shelly-scripts/...` fuer das Shelly Gen2 BLE->MQTT Bridge-Skript
+- `caravan-sd-manifest.json` zur Inhaltspruefung im Geraet
+
+Vorgehen:
+
+1. SD-Karte als FAT32 formatieren.
+2. Das passende `caravan-sd-init-[tag].zip` aus dem Release herunterladen.
+3. Den Inhalt des ZIP direkt in den Root der SD-Karte entpacken.
+4. SD-Karte ins Geraet einsetzen.
+5. Im Setup-Tab den Button „SD-Inhalt prüfen“ verwenden, um die erwartete Struktur zu bestaetigen.
+
+Hinweis:
+
+- Die Release-Artefakte werden von `scripts/release.sh` automatisch erzeugt.
+- Fuer spaetere Aenderungen koennen Dashboard und Skripte auch separat aktualisiert werden.
+
 ## Installationsanleitung
 
 ### Variante A: Browser Web Flasher (empfohlen fuer Updates)
@@ -187,5 +210,6 @@ Lizenz und Drittanbieter-Lizenzen:
 
 Wichtig:
 
-- Dieses Release-Repo verteilt Binaerdateien (ohne Quellcode).
+- Dieses Release-Repo verteilt Binaerdateien.
+- Es enthaelt keinen Quellcode.
 - Quellcode, Lizenzen und Drittanbieter-Lizenzen bleiben im Source Repository dokumentiert.
