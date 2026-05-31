@@ -104,6 +104,7 @@ Hinweise:
 - Funktioniert mit Chrome/Edge Desktop (Web Serial)
 - Auswahl von Kanal (`main`/`beta`) und konkreter Version direkt auf der Seite
 - Schreibt aktuell `firmware.bin` auf Offset `0x10000` (Update-Pfad)
+- Beim Flashen koennen alle Daten auf dem ESP verloren gehen; vorab Konfigurationen und relevante Daten sichern.
 
 ## Installationsanleitung
 
@@ -126,6 +127,7 @@ Schritte:
 Hinweis:
 
 - Diese Methode schreibt `firmware.bin` auf `0x10000` und ist als Update-Pfad gedacht.
+- Beim Flashen koennen alle Daten auf dem ESP verloren gehen; vorab Konfigurationen und relevante Daten sichern.
 
 ### Variante B: OTA-Update aus dem Geraet
 
