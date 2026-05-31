@@ -1,31 +1,30 @@
-# CaravanControl Releases (Binary-Only) ✨
+# CaravanControl Releases (Binary-Only)
 
-CaravanControl ist die lokale Steuer- und Integrationsplattform fuer Caravan-/Boots-Setups auf ESP32-S3.
-Dieses Repository enthaelt ausschliesslich signierte und verifizierbare Release-Artefakte.
+CaravanControl ist die lokale Steuer- und Integrationsplattform fuer Caravan-/Boots-Setups auf ESP32-S3. Dieses Repository enthaelt ausschliesslich signierte und verifizierbare Release-Artefakte.
 
-## Projekt-Highlights
+## Projekt
 
 Die Plattform laeuft internetunabhaengig als lokale Appliance und verbindet Netzwerkdienste, Victron-Integration, Shelly-Geraete und Update-Workflows in einer gemeinsamen Laufzeit.
 
-🧩 Der Projektfokus liegt auf Smarthome-Komponenten von Shelly. Weitere Informationen zum Hersteller: [Shelly Homepage](https://www.shelly.com).
+Der Projektfokus liegt auf Smarthome-Komponenten von Shelly. Weitere Informationen zum Hersteller: [Shelly Homepage](https://www.shelly.com).
 
-🔋 Zusaetzlich integriert das Projekt Victron-Komponenten wie SmartShunt und Solarregler. Weitere Informationen zum Hersteller: [Victron Energy Homepage](https://www.victronenergy.com).
-🔌 Fuer die VE.Direct-Anbindung ueber ESP32-OTG-Host wird ein isolierter 4-Port-USB-Adapter eingesetzt: [Duppa Isolated 4 Port USB](https://www.duppa.net/product/isolated-4-port-usb/).
+Zusaetzlich integriert das Projekt Victron-Komponenten wie SmartShunt und Solarregler. Weitere Informationen zum Hersteller: [Victron Energy Homepage](https://www.victronenergy.com).
+Fuer die VE.Direct-Anbindung ueber ESP32-OTG-Host wird ein isolierter 4-Port-USB-Adapter eingesetzt: [Duppa Isolated 4 Port USB](https://www.duppa.net/product/isolated-4-port-usb/).
 
-🖥️ Empfohlene Zielhardware: [Waveshare ESP32-S3 e-Paper 1.54 Herstellerseite](https://www.waveshare.com/esp32-s3-epaper-1.54.htm?srsltid=AfmBOoqwjPkPx7ijh-JVnJDGCPiQHWezCPckLVLmy2CfNyPFLn5faSFJ).
+Empfohlene Zielhardware: [Waveshare ESP32-S3 e-Paper 1.54 Herstellerseite](https://www.waveshare.com/esp32-s3-epaper-1.54.htm?srsltid=AfmBOoqwjPkPx7ijh-JVnJDGCPiQHWezCPckLVLmy2CfNyPFLn5faSFJ).
 
-### Was das Projekt bietet
+## Funktionen
 
-🔧 Lokale Runtime-Services: HTTP-Server, mDNS (`caravan.local`), MQTT-Broker, RPC-Proxy
-🌐 Netzwerkmodi: `client_only` oder `extender` (AP+STA mit NAT, DHCP/NTP-Unterstuetzung)
-📱 Setup-/Betriebsoberflaechen: vollstaendige Setup-Web-App unter `/setup`, reduzierte Recovery-UI unter `/emergency`, Dashboard fuer Betrieb und Diagnose
-📦 Device-Management: Discovery, Klassifizierung, Inventar und Firmware-/Update-Status
-⬆️ OTA-Updates aus dem Release-Repository mit API-gestuetzter Pruefung
-⚡ Browserbasierter Web-Flasher via GitHub Pages fuer direktes Firmware-Update
-📊 Victron/VE.Direct Integration: UART Single-Device und USB-OTG Multiport (FT4232H, bis 4 Ports) mit Live-Telemetrie; im OTG-Pfad mit isoliertem 4-Port-USB-Adapter (Duppa)
-🎛️ Automations- und Telemetriebausteine fuer Energie- und Lastszenarien, inklusive Shore-Power-Pfad
+- Lokale Runtime-Services: HTTP-Server, mDNS (`caravan.local`), MQTT-Broker, RPC-Proxy
+- Netzwerkmodi: `client_only` oder `extender` (AP+STA mit NAT, DHCP/NTP-Unterstuetzung)
+- Setup-/Betriebsoberflaechen: vollstaendige Setup-Web-App unter `/setup`, reduzierte Recovery-UI unter `/emergency`, Dashboard fuer Betrieb und Diagnose
+- Device-Management: Discovery, Klassifizierung, Inventar und Firmware-/Update-Status
+- OTA-Updates aus dem Release-Repository mit API-gestuetzter Pruefung
+- Browserbasierter Web-Flasher via GitHub Pages fuer direktes Firmware-Update
+- Victron/VE.Direct Integration: UART Single-Device und USB-OTG Multiport (FT4232H, bis 4 Ports) mit Live-Telemetrie; im OTG-Pfad mit isoliertem 4-Port-USB-Adapter (Duppa)
+- Automations- und Telemetriebausteine fuer Energie- und Lastszenarien, inklusive Shore-Power-Pfad
 
-### Unterstuetzte Shelly-Produkte
+## Unterstuetzte Shelly-Produkte
 
 - Shelly Plus 1
 - Shelly Plus 1PM
@@ -94,7 +93,7 @@ Beispiel Check:
 curl -s "http://caravan.local/api/base/ota/check?repo=VolkmSte/Shelly_CaravanControl_Releases" | python3 -m json.tool
 ```
 
-## Web Flasher (Browser)
+## Web Flasher
 
 Direktlink (GitHub Pages ist aktiviert):
 
