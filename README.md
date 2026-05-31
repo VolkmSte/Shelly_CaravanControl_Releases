@@ -5,7 +5,7 @@ Dieses Repository enthaelt ausschliesslich signierte und verifizierbare Release-
 
 ## Projekt-Highlights
 
-CaravanControl ist eine lokale Steuer- und Integrationsplattform fuer Caravan-/Boots-Setups auf ESP32-S3. Das System laeuft internetunabhaengig als lokale Appliance und verbindet Netzwerkdienste, Victron-Integration, Shelly-Geraete und Update-Workflows in einer gemeinsamen Laufzeit.
+Die Plattform laeuft internetunabhaengig als lokale Appliance und verbindet Netzwerkdienste, Victron-Integration, Shelly-Geraete und Update-Workflows in einer gemeinsamen Laufzeit.
 
 🧩 Der Projektfokus liegt auf Smarthome-Komponenten von Shelly. Weitere Informationen zum Hersteller: [Shelly Homepage](https://www.shelly.com).
 
@@ -20,10 +20,10 @@ CaravanControl ist eine lokale Steuer- und Integrationsplattform fuer Caravan-/B
 🌐 Netzwerkmodi: `client_only` oder `extender` (AP+STA mit NAT, DHCP/NTP-Unterstuetzung)
 📱 Setup-/Betriebsoberflaechen: vollstaendige Setup-Web-App unter `/setup`, reduzierte Recovery-UI unter `/emergency`, Dashboard fuer Betrieb und Diagnose
 📦 Device-Management: Discovery, Klassifizierung, Inventar und Firmware-/Update-Status
-⬆️ OTA-Updatepfad aus diesem Release-Repository inkl. API-gestuetzter Update-Pruefung
-⚡ Browserbasierter Web-Flasher (GitHub Pages) fuer direktes Firmware-Update
+⬆️ OTA-Updates aus dem Release-Repository mit API-gestuetzter Pruefung
+⚡ Browserbasierter Web-Flasher via GitHub Pages fuer direktes Firmware-Update
 📊 Victron/VE.Direct Integration: UART Single-Device und USB-OTG Multiport (FT4232H, bis 4 Ports) mit Live-Telemetrie; im OTG-Pfad mit isoliertem 4-Port-USB-Adapter (Duppa)
-🎛️ Lokale Automations-/Telemetriebausteine fuer Energie- und Lastszenarien (inkl. Shore-Power-Pfad)
+🎛️ Automations- und Telemetriebausteine fuer Energie- und Lastszenarien, inklusive Shore-Power-Pfad
 
 ### Unterstuetzte Shelly-Produkte
 
@@ -81,7 +81,7 @@ sha256sum -c spiffs.bin.sha256
 
 Falls ein Hash-Check fehlschlaegt:
 
-- Datei erneut herunterladen
+- Datei neu herunterladen
 - Nicht auf das Geraet flashen
 
 ## OTA Nutzung
@@ -189,4 +189,4 @@ Lizenz und Drittanbieter-Lizenzen:
 Wichtig:
 
 - Dieses Release-Repo verteilt Binaerdateien (ohne Quellcode).
-- Dieses Release-Repo verteilt Binaerdateien. Quellcode, Lizenzen und Drittanbieter-Lizenzen: [Source Repository](https://github.com/VolkmSte/Shelly_CaravanControl), [LICENSE](https://github.com/VolkmSte/Shelly_CaravanControl/blob/main/LICENSE), [THIRD_PARTY_LICENSES](./THIRD_PARTY_LICENSES.md).
+- Quellcode, Lizenzen und Drittanbieter-Lizenzen bleiben im Source Repository dokumentiert.
